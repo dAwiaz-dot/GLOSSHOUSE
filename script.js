@@ -4,12 +4,17 @@
   const nav = document.querySelector("[data-nav]");
   const form = document.querySelector("[data-quote-form]");
   const status = document.querySelector("[data-form-status]");
+  const mobileBooking = document.querySelector("[data-mobile-booking]");
+  const hero = document.querySelector(".hero");
   const instagramUrl = "https://www.instagram.com/glosshouse.studio/";
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function setHeaderState() {
     if (!header) return;
     header.classList.toggle("is-scrolled", window.scrollY > 24);
+    if (mobileBooking && hero) {
+      mobileBooking.classList.toggle("is-visible", window.scrollY > hero.offsetHeight * 0.55);
+    }
   }
 
   function closeMenu() {
