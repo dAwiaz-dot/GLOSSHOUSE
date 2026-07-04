@@ -85,14 +85,32 @@ textarea {
   font-weight: 800;
 }
 
-.brand-logo img {
+.brand-logo-frame {
   display: block;
-  width: 148px;
+  position: relative;
+  width: 142px;
+  height: 72px;
+  overflow: hidden;
+}
+
+.brand-logo img {
+  position: absolute;
+  top: -31px;
+  left: -9px;
+  width: 161px;
+  max-width: none;
   height: auto;
 }
 
-.footer .brand-logo img {
+.footer .brand-logo-frame {
   width: 190px;
+  height: 92px;
+}
+
+.footer .brand-logo img {
+  top: -40px;
+  left: -7px;
+  width: 206px;
 }
 
 .site-nav {
@@ -870,8 +888,15 @@ h3 {
 }
 
 @media (max-width: 700px) {
-  .site-header .brand-logo img {
+  .site-header .brand-logo-frame {
     width: 132px;
+    height: 68px;
+  }
+
+  .site-header .brand-logo img {
+    top: -29px;
+    left: -10px;
+    width: 152px;
   }
 
   body {
