@@ -361,7 +361,6 @@ h3 {
 .hero-showcase img,
 .feature-media img,
 .sticky-card img,
-.team-card img,
 .contact-media img,
 .marquee img {
   width: 100%;
@@ -370,7 +369,6 @@ h3 {
 }
 
 .showcase-overlay,
-.team-card div,
 .contact-media div {
   position: absolute;
   left: 18px;
@@ -388,7 +386,6 @@ h3 {
 }
 
 .showcase-overlay span,
-.team-card span,
 .contact-media a {
   color: var(--muted);
   font-size: .92rem;
@@ -655,23 +652,28 @@ h3 {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: 0;
+  border-top: 1px solid var(--line);
 }
 
-.team-card {
-  position: relative;
-  height: 520px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--panel);
-  box-shadow: var(--shadow);
+.team-member {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+  min-height: 96px;
+  margin: 0;
+  border-bottom: 1px solid var(--line);
 }
 
-.team-card div {
-  flex-direction: column;
-  align-items: flex-start;
+.team-member span {
+  color: var(--accent);
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.team-member strong {
+  font-size: 1.45rem;
+  font-weight: 700;
 }
 
 .faq-list {
@@ -864,8 +866,7 @@ h3 {
     display: none;
   }
 
-  .service-grid,
-  .team-grid {
+  .service-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -938,8 +939,7 @@ h3 {
     height: 320px;
   }
 
-  .service-grid,
-  .team-grid {
+  .service-grid {
     grid-template-columns: 1fr;
   }
 
@@ -962,12 +962,7 @@ h3 {
     height: 360px;
   }
 
-  .team-card {
-    height: 430px;
-  }
-
   .showcase-overlay,
-  .team-card div,
   .contact-media div {
     left: 12px;
     right: 12px;
